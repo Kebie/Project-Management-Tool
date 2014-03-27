@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  before_action :find_project,
+                  only: [:show, :edit, :update, :destroy]
+
   def index
     @projects = Project.all
   end
@@ -17,7 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    
   end
 
   def edit
@@ -25,16 +28,28 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    
+    if @project.update_attributes(project_attributes)
+      redirect_to @project, notice: "Your project was updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    
+    if @project.destroy
+      redirect_to projects_path, notice: "Project deleted"
+    else
+      redirect_to project_path, error: "We had a problem deleting this project"
+    end
   end
 
   private
   def project_attributes
     params.require(:project).permit([:title,:description,:due_date])
+  end
+
+  def find_project
+    @project = Project.find(params[:id])
   end
 
 end

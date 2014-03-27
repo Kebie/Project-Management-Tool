@@ -32,6 +32,16 @@
 
 <div class="container">
 
+  <% if flash[:notice]%>
+    <div class="alert alert-success">
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash[:error]%>
+    <div class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
 <%= yield %>
 
 </div>
