@@ -1,0 +1,27 @@
+<h1>All Projects</h1>
+
+
+
+
+<div class="panel-group" id="accordion">
+ 
+  <% @projects.each do |project| %> 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= project.id %>">
+          <%= project.title %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse_<%= project.id %>" class="panel-collapse collapse">
+      <div class="panel-body">
+        <%= project.description %>
+        <p class="pull-right"><%= link_to "Project Page", project %> <span class="glyphicon glyphicon-chevron-right"></span> </p>
+      
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>

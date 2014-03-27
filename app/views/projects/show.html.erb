@@ -1,0 +1,10 @@
+<h1><%= @project.title %></h1>
+
+<section>
+  <article><%= @project.description %></article>
+  <section>
+    <%= link_to "Edit" , edit_project_path %>
+    <%= button_to('Destroy', project_path,
+          method: "delete", data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %>
+  </section>
+</section>

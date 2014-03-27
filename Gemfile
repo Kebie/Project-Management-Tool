@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 # Use the thin web server
 gem 'thin'
 
+gem "quiet_assets"
+group :development do
+  gem 'hirb'
+  gem 'awesome_print'
+  gem 'interactive_editor'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -11,6 +18,7 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
