@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    
+    @discussions = @project.discussions
   end
 
   def edit

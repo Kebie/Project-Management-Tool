@@ -3,11 +3,15 @@ source 'https://rubygems.org'
 # Use the thin web server
 gem 'thin'
 
+gem 'haml'
+
 gem "quiet_assets"
 group :development do
   gem 'hirb'
   gem 'awesome_print'
   gem 'interactive_editor'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

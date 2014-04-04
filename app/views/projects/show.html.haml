@@ -1,0 +1,17 @@
+%h1= @project.title
+%section
+  %article= @project.description
+  %section
+    = link_to "Edit" , edit_project_path , class: "btn btn-primary"
+    = link_to "Delete", @project, method: :delete, data: {confirm: "Are you sure you want to delete this question?"}, class: "btn btn-danger"
+
+%h2 Discussions
+
+= link_to "Add Discussion", new_project_discussion_path(@project), class: "btn btn-primary"
+
+%table.table
+  %tr
+    %th Discussion Title
+  - @discussions.each do |discussion|
+    %tr
+      %td= link_to discussion.title, project_discussion_path(@project, discussion)

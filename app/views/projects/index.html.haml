@@ -1,0 +1,9 @@
+%h1 All Projects
+%table.table
+  %tr
+    %th Project Title
+    %th Due Date
+  - @projects.each do |project|
+    %tr
+      %td= link_to project.title, project
+      %td= project.due_date.strftime("%F")

@@ -1,0 +1,15 @@
+%h1 
+  = @discussion.title
+%p 
+  = @discussion.description
+
+.btn
+  = link_to "Edit Discussion", edit_project_discussion_path(@project,@discussion), class: "btn btn-warning"
+  = link_to "Delete", [@project,@discussion], method: :delete, data: {confirm: "Are you sure you want to delete this discussion?"}, class: "btn btn-danger"
+
+%h2 Comments
+
+= render @comments
+
+%h3 Leave a Comment
+= render(:partial => "comments/form")

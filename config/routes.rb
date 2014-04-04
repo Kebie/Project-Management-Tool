@@ -2,7 +2,14 @@ PmTool::Application.routes.draw do
   root "home#index"
   get "/about_us" => "home#about"
 
-  resources :projects
+  resources :projects do
+    resources :discussions
+  end
+
+  resources :discussions, only: [] do 
+      resources :comments
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

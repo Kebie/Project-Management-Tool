@@ -1,0 +1,4 @@
+.well
+    = comment.body
+    = link_to "Edit", edit_discussion_comment_path(@discussion,comment), class: " btn btn-warning btn-xs"
+    = link_to "X", [@discussion,comment], method: :delete, data: {confirm: "Are you sure you want to delete this discussion?"}, class: "pull-right btn btn-danger btn-xs"
