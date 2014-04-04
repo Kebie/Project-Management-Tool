@@ -1,0 +1,15 @@
+- if @task.errors.any?
+  %h4 Please fix the following issues
+  .alert.alert-danger
+    %ul
+      - @task.errors.full_messages.each do |err|
+        %li= err
+= form_for([@project, @task]) do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+  .form-group
+    = f.submit class: "btn btn-primary"

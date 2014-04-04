@@ -4,6 +4,12 @@ PmTool::Application.routes.draw do
 
   resources :projects do
     resources :discussions
+    resources :tasks do
+      member do
+        post :done
+        get :done
+      end
+    end
   end
 
   resources :discussions, only: [] do 

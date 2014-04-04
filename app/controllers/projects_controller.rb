@@ -20,6 +20,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @tasks_complete = @project.tasks.completed
+    @tasks_incomplete = @project.tasks.incomplete
     @discussions = @project.discussions
   end
 
