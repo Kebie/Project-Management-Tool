@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Use the thin web server
 gem 'thin'
 
+gem 'devise'
+
+
 gem 'haml'
 
 gem "quiet_assets"
