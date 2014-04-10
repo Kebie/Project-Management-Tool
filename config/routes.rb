@@ -1,7 +1,8 @@
 PmTool::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   root "home#index"
   get "/about_us" => "home#about"
+
 
   resources :projects do
     resources :discussions
